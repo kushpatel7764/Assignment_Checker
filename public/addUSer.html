@@ -1,0 +1,32 @@
+<html>
+<head>
+  <title>Express</title>
+  <link rel="stylesheet" href="/stylesheets/style.css"> 
+</head>
+
+<body> 
+  <div id= "message"></div>
+  <h2>Please add a new assignment</h2>
+  
+  <form method="post" action="/exam/addUSer">
+  <div style = "float:left; width: 200px;"> User name </div>
+    <input type="text" name="username" placeholder="user name"><br>
+    <input style="margin-left: 200px;" type="radio" id="student" name="admin_student" value="student"> student
+    <input type="radio" id="admin" name="admin_student" value="admin"> admin<br> <br>
+  <div style = "float:left; width: 200px;">Password </div>
+    <input type="password" name="password" placeholder="Password"></input><br>
+  <br><div style = "float:left; width: 200px;">&nbsp;</div>
+    <input type="submit" value="Submit the user information">
+  </form>
+
+  <br> <a href="/exam/admin">Back to Main Administrative Page</a><br>
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const name = urlParams.get('message');
+    if (message) {
+      document.getElementById('message').innerHTML = name;
+    }
+  </script>
+
+</body>
+</html>
